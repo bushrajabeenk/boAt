@@ -51,6 +51,7 @@ const CardData = styled.div`
   border-radius: 12px;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
+  margin-bottom: 10px;
 
   & > .product-title {
     margin: auto;
