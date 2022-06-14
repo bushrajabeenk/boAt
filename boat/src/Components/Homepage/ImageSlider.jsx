@@ -3,8 +3,10 @@ import SimpleImageSlider from "react-simple-image-slider";
 import img1 from "./../../Assets/slider-img-1.webp";
 import img2 from "./../../Assets/slider-img-2.webp";
 import img3 from "./../../Assets/slider-img-3.webp";
+import img4 from "./../../Assets/slider-img-4.webp";
 
-const images = [{ url: img1 }, { url: img2 }, { url: img3 }];
+
+const images = [{ url: img1 }, { url: img2 }, { url: img3 }, { url: img4 }];
 
 export const ImageSlider = () => {
   return (

@@ -63,17 +63,7 @@ const NavContainer = styled.div`
     }
 
     > span:hover {
-      color: var(--red);
-    }
-
-    > span::after {
-      content: "";
-      position: absolute;
-      height: 12px;
-      width: 1px;
-      background: var(--red);
-      top: 22%;
-      right: -15px;
+      text-decoration: underline;
     }
 
     > span:nth-child(4)::after {
@@ -83,6 +73,7 @@ const NavContainer = styled.div`
     > span:nth-child(1) {
       /* transition: all 1s ease; */
     }
+    
     > span:nth-child(1) .navbar-collection {
       position: fixed;
       background: var(--black-gradient);
@@ -118,7 +109,7 @@ const NavContainer = styled.div`
 
 const SearchBox = styled.div`
   width: 235px;
-  height: 36px;
+  height: 40px;
   border-radius: 19px;
   background: var(--white);
   display: flex;
@@ -194,7 +185,6 @@ const Navbar = () => {
         </div>
 
         <div>
-
           <SearchBox>
             <img src={searchIcon} alt="search" />
             <input type="text" placeholder="Search..." />
@@ -212,13 +202,12 @@ const Navbar = () => {
               <img src={couponIcon} alt="couponIcon" />
             </Link>
           </div>
-          
+
           <div>
             <Link to="/cart">
               <img src={cartIcon} alt="cartIcon" />
             </Link>
           </div>
-
         </div>
       </NavContainer>
       <NavbarSpaceHolder></NavbarSpaceHolder>
