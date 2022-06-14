@@ -1,5 +1,4 @@
 import React from "react";
-import { Footer } from './../Footer/Footer';
 import { ImageSlider } from './ImageSlider';
 
 const Homepage = () => {
@@ -7,7 +6,7 @@ const Homepage = () => {
     <div>
 
       <ImageSlider />
-      <Footer />
+     
     </div>
   );
 };
