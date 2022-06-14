@@ -43,12 +43,12 @@ const InnerImgContainer = styled.div`
 
 const CardData = styled.div`
   width: 310px;
-  height: 150px;
+  height: 170px;
   margin: auto;
   position: relative;
   background: var(--white);
   border: 1px solid transparent;
-  border-radius: 12px;  
+  border-radius: 12px;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
 
@@ -158,6 +158,7 @@ export const ProductCard = ({ el }) => {
             </p>
 
             <p className="product-reviews">{el.reviews} reviews</p>
+
             <p className="product-price">
               ₹
               {Math.floor(
