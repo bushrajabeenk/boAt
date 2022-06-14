@@ -20,7 +20,7 @@ const CardContainer = styled.div`
 
 const InnerImgContainer = styled.div`
   width: 330px;
-  height: 230px;
+  height: 340px;
   background: var(--gray);
   overflow: hidden;
   border-top-left-radius: 15px;
@@ -28,8 +28,8 @@ const InnerImgContainer = styled.div`
   position: relative;
 
   & > img {
-    width: 210px;
-    height: 210px;
+    width: 250px;
+    height: 250px;
     position: absolute;
     top: 10px;
     left: 55px;

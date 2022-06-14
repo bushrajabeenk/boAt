@@ -2,20 +2,23 @@ import styled from "styled-components";
 import { ProductCard } from "./../Products/ProductCard";
 
 const Container = styled.div`
-  height: 650px;
+  width: 100%;
+  height: 570px;
   padding-top: 40px;
-  padding-bottom: 120px;
 
   .heading {
     color: white;
   }
 
   .data-grid {
+    width: 90%;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 100px);
+    margin: auto;
     justify-content: space-evenly;
-    margin-top: 30px;
-    row-gap: 70px;
+    margin-top: 40px;
+    gap: 25px;
   }
 `;
 
