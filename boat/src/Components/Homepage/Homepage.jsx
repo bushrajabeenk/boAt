@@ -7,6 +7,7 @@ import { ThirdProdSlider } from "./ThirdProdSlider";
 import { FourProdSlider } from "./FourProdSlider";
 import { FiveProdSlider } from "./FiveProdSlider";
 import { SixProdSlider } from "./SixProdSlider";
+import { Blogs } from "./Blogs/Blogs";
 
 const Homepage = () => {
   return (
@@ -19,6 +20,7 @@ const Homepage = () => {
       <FourProdSlider />
       <FiveProdSlider />
       <SixProdSlider />
+      <Blogs />
     </div>
   );
 };

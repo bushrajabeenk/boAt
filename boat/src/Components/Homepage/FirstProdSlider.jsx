@@ -109,14 +109,6 @@ export function FirstProdSlider() {
 
   return (
     <Container>
-      {/* <div className="category">
-        <span>Best sellers</span>
-        <span>Trending in Earbuds</span>
-        <span>Top Smart Watches</span>
-        <span>New Launches</span>
-        <span>Top Wireless</span>
-        <span>Top Wired</span>
-      </div> */}
       <div className="heading">
         <h1>Best Sellers</h1>
       </div>
