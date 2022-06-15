@@ -3,6 +3,7 @@ import styled from "styled-components";
 const BCardContainer = styled.div`
   width: 93%;
   margin: auto;
+  margin-top: 30px;
 
   & > img {
     max-width: 100%;
@@ -37,7 +38,6 @@ export const BlogsCard = ({ bThumb, bTitle }) => {
       <BCardContainer>
         <img src={bThumb} alt={bTitle} />
         <h3>{bTitle}</h3>
-        {/* <BCardBtn>Read More</BCardBtn> */}
       </BCardContainer>
     </div>
   );

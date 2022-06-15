@@ -8,7 +8,7 @@ import Products from "./../Components/Products/Products";
 import Cart from "./../Components/Cart/Cart";
 import Collections from "./../Components/Collections/Collections";
 import Error from "./../Components/Error/Error";
-import Success from "./../Components/Succes/Success";
+import Success from "./../Components/Success/Success";
 
 const AllRoutes = () => {
   return (

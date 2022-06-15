@@ -27,14 +27,17 @@ const BlogContainer = styled.section`
   text-align: center;
   background-color: var(--grey2);
 
-  & > h2 {
+  .heading {
+    color: black;
     margin-top: 50px;
-    font-size: 30px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 600;
     line-height: 61px;
     letter-spacing: 0em;
+    padding-top: 30px;
   }
+
   & > div {
     display: flex;
     align-items: center;
@@ -62,10 +65,12 @@ const BCardBtn = styled.button`
 export const Blogs = () => {
   return (
     <BlogContainer>
-      <h2>boAt Blogs</h2>
+      <div className="heading">
+        <h2>boAt Blogs</h2>
+      </div>
       <div>
         {blogs.map(({ bThumb, bTitle }) => (
-          <BlogsCard bThumb={bThumb} bTitle={bTitle} />
+          <BlogsCard key={bTitle} bThumb={bThumb} bTitle={bTitle} />
         ))}
       </div>
       <BCardBtn>EXPLORE BLOGS</BCardBtn>

@@ -8,6 +8,9 @@ import { FourProdSlider } from "./FourProdSlider";
 import { FiveProdSlider } from "./FiveProdSlider";
 import { SixProdSlider } from "./SixProdSlider";
 import { Blogs } from "./Blogs/Blogs";
+import BoatHeads from './BoatHeads/BoatHeads';
+import WhatTheySay from './WhatTheySay/WhatTheySay';
+import AfterPress from "./AfterPress";
 
 const Homepage = () => {
   return (
@@ -21,6 +24,9 @@ const Homepage = () => {
       <FiveProdSlider />
       <SixProdSlider />
       <Blogs />
+      <BoatHeads />
+      <WhatTheySay />
+      <AfterPress />
     </div>
   );
 };

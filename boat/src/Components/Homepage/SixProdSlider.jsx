@@ -3,7 +3,7 @@ import { ProductCard } from "./../Products/ProductCard";
 
 const Container = styled.div`
   width: 100%;
-  height: 540px;
+  height: 500px;
 
   .heading {
     color: white;
