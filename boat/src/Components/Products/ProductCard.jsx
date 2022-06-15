@@ -172,7 +172,7 @@ export const ProductCard = ({ el }) => {
               <span>({el.discount}%)</span>
             </p>
             <CardShopNowButton>
-              <span>ADD TO CART</span>
+              <span>SHOP NOW</span>
             </CardShopNowButton>
           </CardData>
         </CardContainer>
