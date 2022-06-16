@@ -5,10 +5,10 @@ import Login from "./../Components/Login-Signup/Login";
 import Signup from "./../Components/Login-Signup/Signup";
 import Payments from "./../Components/Payments/Payments";
 import Products from "./../Components/Products/Products";
-import Cart from "./../Components/Cart/Cart";
 import Collections from "./../Components/Collections/Collections";
 import Error from "./../Components/Error/Error";
 import Success from "./../Components/Success/Success";
+import Cart from './../Components/Cart/Cart';
 
 const AllRoutes = () => {
   return (

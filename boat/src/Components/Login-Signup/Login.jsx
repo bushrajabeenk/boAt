@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-import { loginAPI } from "../store/auth/auth.actions";
+import { loginAPI } from './../../Store/login/login.actions';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -37,7 +37,7 @@ const Login = () => {
       // <Navigate to={`location.pathname || "/"`} replace={true} />
     }
   }, [isAuth]);
-  
+
   return (
     <div>
       Login

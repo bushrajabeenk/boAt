@@ -4,7 +4,7 @@ import {
   LOGIN_ERROR,
   LOGIN_SUCCESS,
   LOGOUT,
-} from "./auth.types";
+} from "./login.types";
 
 // thunk which will help us
 export const loginAPI = (data) => (dispatch) => {
