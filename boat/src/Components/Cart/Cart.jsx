@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  getDataFunc,
+  postDataFunc,
+  patchDataFunc,
+  deleteDataFunc,
+} from "./../../Store/cart/cart.actions";
 
 const Cart = () => {
-  return (
-    <div>Cart</div>
-  )
-}
+  const cartData = useSelector((state) => state.cart.cartData);
+  const dispatch = useDispatch();
 
-export default Cart
+  useEffect(() => {
+    dispatch(getDataFunc());
+  }, [dispatch]);
+
+  return <div></div>;
+};
+
+export default Cart;

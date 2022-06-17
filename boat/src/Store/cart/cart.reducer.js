@@ -36,7 +36,7 @@ const initState = {
     success: false,
     error: false,
   },
-  data: [],
+  cartData: [],
   count: 0,
 };
 
@@ -62,7 +62,7 @@ export const cartReducer = (state = initState, { type, payload }) => {
           success: true,
           error: false,
         },
-        data: payload,
+        cartData: payload,
       };
     }
     case GET_DATA_ERROR: {
@@ -96,7 +96,7 @@ export const cartReducer = (state = initState, { type, payload }) => {
           success: true,
           error: false,
         },
-        data: [...state.data, payload],
+        cartData: [...state.cartData, payload],
       };
     }
     case POST_DATA_ERROR: {
@@ -119,7 +119,7 @@ export const cartReducer = (state = initState, { type, payload }) => {
           success: false,
           error: false,
         },
-        data: payload,
+        cartData: payload,
       };
     }
     case PATCH_DATA_SUCCESS: {
@@ -143,7 +143,7 @@ export const cartReducer = (state = initState, { type, payload }) => {
           success: false,
           error: true,
         },
-        data: payload,
+        cartData: payload,
       };
     }
     case DELETE_DATA_LOADING: {
@@ -155,7 +155,7 @@ export const cartReducer = (state = initState, { type, payload }) => {
           success: false,
           error: false,
         },
-        data: payload,
+        cartData: payload,
       };
     }
     case DELETE_DATA_SUCCESS: {
@@ -167,7 +167,7 @@ export const cartReducer = (state = initState, { type, payload }) => {
           success: true,
           error: false,
         },
-        data: payload,
+        cartData: payload,
       };
     }
     case DELETE_DATA_ERROR: {
@@ -179,7 +179,7 @@ export const cartReducer = (state = initState, { type, payload }) => {
           success: false,
           error: true,
         },
-        data: payload,
+        cartData: payload,
       };
     }
     case INC_DATA: {
