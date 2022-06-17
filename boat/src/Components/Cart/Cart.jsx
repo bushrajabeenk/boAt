@@ -11,6 +11,8 @@ import { FiTrash2 } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 const CartContainer = styled.div`
+  background: var(--white);
+
   .left {
     width: 50%;
     margin: auto;
@@ -35,22 +37,18 @@ const Cart = () => {
 
   const handleDelete = (id) => {
     dispatch(deleteCDataFunc(id));
-  }
+  };
 
   let totAmnt = 0;
   cartData?.map(
     (el) =>
       (totAmnt += Math.floor(
-        Number(
-          Math.floor(
-            el.original_price - (el.original_price * el.discount) / 100
-          )
-        ) *
-          ((100 - Number(el.discount)) / 100)
-      ))
+        el.original_price - (el.original_price * el.discount) / 100
+      )) *
+      ((100 - Number(el.discount)) / 100)
   );
 
-  console.log(cartData);
+  console.log(totAmnt);
 
   useEffect(() => {
     dispatch(getCDataFunc());
@@ -59,7 +57,7 @@ const Cart = () => {
   return (
     <div>
       <CartContainer>
-        <h1>Your Cart ${cartData.length || 0} items</h1>
+        <h1>Your Cart ({cartData.length || 0}) items</h1>
         <p>
           Free Shipping sitewide | <b>Cash On Delivery</b> available for order
           value upto ₹3000
@@ -67,8 +65,7 @@ const Cart = () => {
         <div className="top">
           {cartData.map((cartD) => {
             return (
-              <>
-                <div>
+                <div key={cartD.id}>
                   <div className="prod-img">
                     <img src={cartD.image[0]} alt="" />
                   </div>
@@ -100,7 +97,7 @@ const Cart = () => {
                     </div>
                   </div>
                 </div>
-              </>
+              
             );
           })}
         </div>
