@@ -25,7 +25,7 @@ export const getCDataFunc = () => async (dispatch) => {
 };
 
 export const postCDataFunc = (payload) => async (dispatch) => {
-  dispatch({ type: POST_DATA_LOADING });
+  // dispatch({ type: POST_DATA_LOADING });
   return axios
     .post("https://my-boat-data.herokuapp.com/cartData", payload)
     .then((r) => {

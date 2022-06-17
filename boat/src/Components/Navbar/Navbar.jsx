@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 // import { useLocation } from "react-router-dom";
 
 // importing Custom sub-Components
-import { Collection, SearchResults } from "./NavHover";
+import { SearchResults } from "./NavHover";
+// import { Collection } from "./NavHover";
+
 
 // importing assets
 import logo from "./../../Assets/boat-logo.svg";
@@ -12,6 +14,7 @@ import searchIcon from "./../../Assets/search-icon.svg";
 import couponIcon from "./../../Assets/coupon-icon.svg";
 import avatarIcon from "./../../Assets/avatar-icon.svg";
 import cartIcon from "./../../Assets/cart-icon.svg";
+import { useSelector } from "react-redux";
 // import { useEffect, useState } from "react";
 
 const NavContainer = styled.div`
@@ -161,6 +164,8 @@ const Navbar = () => {
   //   }
   // }, [temp.location.pathname]);
 
+  const cartData = useSelector((state) => state.cart.cartData);
+
   return (
     <>
       <NavContainer>
@@ -173,7 +178,7 @@ const Navbar = () => {
         <div className="nav-links">
           <span>
             Shop <img src={downArrowIcon} alt="arrow-Icon" />
-            <Collection className="navbar-collection" />
+            {/* <Collection className="navbar-collection" /> */}
           </span>
 
           <span>Offer Zone</span>
@@ -204,9 +209,24 @@ const Navbar = () => {
 
           <div>
             <Link to="/cart">
-              <img src={cartIcon} alt="cartIcon" />
+              <div>
+                <img src={cartIcon} alt="cartIcon" />
+                {cartData.length}
+              </div>
             </Link>
           </div>
+
+          {/* <div>
+            <Link to="/cart">
+              <button type="button" class="icon-button">
+                <span class="material-icons">
+                  <img src={cartIcon} alt="cartIcon" />
+                </span>
+                <span>{cartData.length}</span>
+              </button>
+            </Link>
+          </div> */}
+          
         </div>
       </NavContainer>
       <NavbarSpaceHolder></NavbarSpaceHolder>

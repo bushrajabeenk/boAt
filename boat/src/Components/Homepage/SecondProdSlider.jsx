@@ -45,7 +45,7 @@ export function SecondProdSlider() {
       </div>
       <div className="data-grid">
         {twoprodSlider.map((el) => (
-          <ProductCard key={el._id} el={el}></ProductCard>
+          <ProductCard key={el.id} el={el}></ProductCard>
         ))}
       </div>
     </Container>

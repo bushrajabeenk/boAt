@@ -44,7 +44,7 @@ const BoatHeadCard = ({ head, name, tagline, desc, imgurl }) => {
   return (
     <div>
       <BCardContainer>
-        <div classname="img-size">
+        <div className="img-size">
           <img src={imgurl} alt={name} />
         </div>
         <div className="card-data">

@@ -46,9 +46,9 @@ export function ThirdProdSlider() {
         <h1>Trending Wireless</h1>
       </div>
       <div className="data-grid">
-        {threeprodSlider.map((el) => (
-          <ProductCard key={el._id} el={el}></ProductCard>
-        ))}
+        {threeprodSlider.map((el) => {
+          return <ProductCard key={el.id} el={el}></ProductCard>;
+        })}
       </div>
     </Container>
   );

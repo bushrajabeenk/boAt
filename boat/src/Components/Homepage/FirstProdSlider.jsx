@@ -45,9 +45,9 @@ export function FirstProdSlider() {
         <h1>Best Sellers</h1>
       </div>
       <div className="data-grid">
-        {oneprodSlider.map((el) => (
-          <ProductCard key={el._id} el={el}></ProductCard>
-        ))}
+        {oneprodSlider.map((el) => {
+          return <ProductCard key={el.id} el={el}></ProductCard>;
+        })}
       </div>
     </Container>
   );

@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { postCDataFunc } from "../../Store/cart/cart.actions";
-import { getCDataFunc } from "./../../Store/cart/cart.actions";
+import { useDispatch } from "react-redux";
+import { getCDataFunc, postCDataFunc } from "../../Store/cart/cart.actions";
 
 const OuterCardContainer = styled.div`
   width: 100%;
@@ -119,6 +118,7 @@ const CardShopNowButton = styled.button`
   background: var(--red);
   transition: all 0.2s ease;
   font-weight: bold;
+  color: var(--white);
 
   & > span {
     transform: translateY(-1px);
@@ -184,7 +184,7 @@ export const ProductCard = ({ el }) => {
             </p>
             <CardShopNowButton>
               <Link to="/cart">
-                <button onClick={() => handleAddToCart(el)}>SHOP NOW</button>
+                <div onClick={() => handleAddToCart(el)}>SHOP NOW</div>
               </Link>
             </CardShopNowButton>
           </CardData>
