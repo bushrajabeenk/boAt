@@ -30,7 +30,9 @@ export function ThirdProdSlider() {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      let r = await axios.get(`http://localhost:1001/threeprodSlider`);
+      let r = await axios.get(
+        `https://my-boat-data.herokuapp.com/threeprodSlider`
+      );
       let data = await r.data;
       //console.log(data);
       setthreeprodSlider(data);

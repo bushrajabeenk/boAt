@@ -28,7 +28,9 @@ export function FourProdSlider() {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      let r = await axios.get(`http://localhost:1001/fourprodSlider`);
+      let r = await axios.get(
+        `https://my-boat-data.herokuapp.com/fourprodSlider`
+      );
       let data = await r.data;
       //console.log(data);
       setfourprodSlider(data);

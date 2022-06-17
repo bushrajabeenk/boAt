@@ -30,7 +30,9 @@ export function FiveProdSlider() {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      let r = await axios.get(`http://localhost:1001/fiveprodSlider`);
+      let r = await axios.get(
+        `https://my-boat-data.herokuapp.com/fiveprodSlider`
+      );
       let data = await r.data;
       //console.log(data);
       setfiveprodSlider(data);

@@ -9,6 +9,8 @@ import {
 } from "./cart.types";
 import axios from "axios";
 
+//const data = require("./../../db.json")
+
 export const getCDataFunc = () => async (dispatch) => {
   dispatch({ type: GET_DATA_LOADING });
   return axios

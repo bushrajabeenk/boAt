@@ -21,7 +21,7 @@ const initState = {
     error: false,
   },
   cartData: [],
-  count: 0,
+  count: 1,
 };
 
 export const cartReducer = (state = initState, { type, payload }) => {

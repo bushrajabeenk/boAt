@@ -23,6 +23,7 @@ const CartContainer = styled.div`
 
 const Cart = () => {
   const cartData = useSelector((state) => state.cart.cartData);
+  const count = useSelector((state) => state.cart.count);
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
@@ -44,8 +45,7 @@ const Cart = () => {
     (el) =>
       (totAmnt += Math.floor(
         el.original_price - (el.original_price * el.discount) / 100
-      )) *
-      ((100 - Number(el.discount)) / 100)
+      ))
   );
 
   console.log(totAmnt);
@@ -65,39 +65,38 @@ const Cart = () => {
         <div className="top">
           {cartData.map((cartD) => {
             return (
-                <div key={cartD.id}>
-                  <div className="prod-img">
-                    <img src={cartD.image[0]} alt="" />
+              <div key={cartD.id}>
+                <div className="prod-img">
+                  <img src={cartD.image[0]} alt="" />
+                </div>
+                <div>
+                  <div className="prod-name">{cartD.name}</div>
+                  <div className="prod-price">
+                    {Math.floor(
+                      cartD.original_price -
+                        (cartD.original_price * cartD.discount) / 100
+                    ) * count}
+                    <span className="prod-origprice">
+                      {cartD.original_price * count}
+                    </span>
                   </div>
                   <div>
-                    <div className="prod-name">{cartD.name}</div>
-                    <div className="prod-price">
-                      {Math.floor(
-                        cartD.original_price -
-                          (cartD.original_price * cartD.discount) / 100
-                      )}
-                      <span className="prod-origprice">
-                        {cartD.original_price}
-                      </span>
+                    <div className="prod-qtydec">
+                      <button onClick={() => dispatch(dec_count())}>-</button>
                     </div>
-                    <div>
-                      <div className="prod-qtydec">
-                        <button onClick={dec_count}>-</button>
-                      </div>
-                      <div className="prod-qty">{cartData.count}</div>
-                      <div className="prod-qtyinc">
-                        <button onClick={inc_count}>+</button>
-                      </div>
-                      <div className="prod-color">{cartD.color[0]}</div>
-                      <div className="prod-delete">
-                        <button onClick={() => handleDelete(cartD.id)}>
-                          <FiTrash2 size={18} />
-                        </button>
-                      </div>
+                    <div className="prod-qty">{count}</div>
+                    <div className="prod-qtyinc">
+                      <button onClick={() => dispatch(inc_count())}>+</button>
+                    </div>
+                    <div className="prod-color">{cartD.color[0]}</div>
+                    <div className="prod-delete">
+                      <button onClick={() => handleDelete(cartD.id)}>
+                        <FiTrash2 size={18} />
+                      </button>
                     </div>
                   </div>
                 </div>
-              
+              </div>
             );
           })}
         </div>
@@ -115,7 +114,7 @@ const Cart = () => {
               <b>Total</b>
             </div>
             <div>
-              <b>Rs {totAmnt.toFixed(2)}</b>
+              <b>Rs {0 || totAmnt.toFixed(2)}</b>
             </div>
           </div>
           <div>Or 3 interest-free payment of 1499 with Zest</div>
