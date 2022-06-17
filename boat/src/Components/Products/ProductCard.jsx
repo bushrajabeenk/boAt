@@ -128,7 +128,7 @@ const CardShopNowButton = styled.button`
   }
 `;
 
-export const ProductCard = ({ el }) => {
+export const ProductCard = ({ el, handleAddToCart }) => {
   const imageFlag = el.image.length > 1 ? true : false;
 
   return (
@@ -173,7 +173,7 @@ export const ProductCard = ({ el }) => {
             </p>
             <CardShopNowButton>
               <Link to="/cart">
-                <span>SHOP NOW</span>
+                <button onClick={() => handleAddToCart(el)}>SHOP NOW</button>
               </Link>
             </CardShopNowButton>
           </CardData>

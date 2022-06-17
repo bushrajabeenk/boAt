@@ -2,6 +2,9 @@ import {
   GET_DATA_LOADING,
   GET_DATA_SUCCESS,
   GET_DATA_ERROR,
+  POST_DATA_LOADING,
+  POST_DATA_SUCCESS,
+  POST_DATA_ERROR,
   DELETE_DATA_LOADING,
   DELETE_DATA_SUCCESS,
   DELETE_DATA_ERROR,
@@ -11,6 +14,11 @@ import {
 
 const initState = {
   getCData: {
+    loading: false,
+    success: false,
+    error: false,
+  },
+  postCData: {
     loading: false,
     success: false,
     error: false,
@@ -54,6 +62,40 @@ export const cartReducer = (state = initState, { type, payload }) => {
         ...state,
         getCData: {
           ...state.getCData,
+          loading: false,
+          success: false,
+          error: true,
+        },
+      };
+    }
+    case POST_DATA_LOADING: {
+      return {
+        ...state,
+        postCData: {
+          ...state.postCData,
+          loading: true,
+          success: false,
+          error: false,
+        },
+      };
+    }
+    case POST_DATA_SUCCESS: {
+      return {
+        ...state,
+        postCData: {
+          ...state.postCData,
+          loading: false,
+          success: true,
+          error: false,
+        },
+        cartData: payload,
+      };
+    }
+    case POST_DATA_ERROR: {
+      return {
+        ...state,
+        postCData: {
+          ...state.postCData,
           loading: false,
           success: false,
           error: true,
