@@ -40,14 +40,6 @@ const Cart = () => {
   };
 
   let totAmnt = 0;
-  cartData?.map(
-    (el) =>
-      (totAmnt += Math.floor(
-        el.original_price - (el.original_price * el.discount) / 100
-      ))
-  );
-
-  console.log(totAmnt);
 
   useEffect(() => {
     dispatch(getCDataFunc());
@@ -61,10 +53,11 @@ const Cart = () => {
           Free Shipping sitewide | <b>Cash On Delivery</b> available for order
           value upto ₹3000
         </p>
-        <div className="top">
-          {cartData.map((cartD) => {
-            return (
-              <div key={cartD.id}>
+
+        {cartData.map((cartD) => {
+          return (
+            <div key={cartD.id}>
+              <div className="top">
                 <div className="prod-img">
                   <img src={cartD.image[0]} alt="" />
                 </div>
@@ -96,31 +89,37 @@ const Cart = () => {
                   </div>
                 </div>
               </div>
-            );
-          })}
-        </div>
-        <div className="bottom">
-          <div>
-            <div>
-              <b>Shipping</b>
+              <div className="bottom">
+                <div>
+                  <div>
+                    <b>Shipping</b>
+                  </div>
+                  <div>
+                    <b>FREE</b>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <b>Total</b>
+                  </div>
+                  <div>
+                    <b>
+                      Rs{" "}
+                      {(totAmnt += Math.floor(
+                        cartD.original_price -
+                          (cartD.original_price * cartD.discount) / 100
+                      )).toFixed(2)}
+                    </b>
+                  </div>
+                </div>
+                <div>Or 3 interest-free payment of 1499 with Zest</div>
+                <div onClick={contShopping}>Continue Shopping</div>
+                <div onClick={checkout}>CASH ON DELIVERY</div>
+                <div onClick={checkout}>PAY VIA CARD/OTHERS</div>
+              </div>
             </div>
-            <div>
-              <b>FREE</b>
-            </div>
-          </div>
-          <div>
-            <div>
-              <b>Total</b>
-            </div>
-            <div>
-              <b>Rs {0 || totAmnt.toFixed(2)}</b>
-            </div>
-          </div>
-          <div>Or 3 interest-free payment of 1499 with Zest</div>
-          <div onClick={contShopping}>Continue Shopping</div>
-          <div onClick={checkout}>CASH ON DELIVERY</div>
-          <div onClick={checkout}>PAY VIA CARD/OTHERS</div>
-        </div>
+          );
+        })}
       </CartContainer>
     </div>
   );

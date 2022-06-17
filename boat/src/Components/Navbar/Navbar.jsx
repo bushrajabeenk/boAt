@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 // importing Custom sub-Components
 import { Collection, SearchResults } from "./NavHover";
-// import { Collection } from "./NavHover";
 
 
 // importing assets
