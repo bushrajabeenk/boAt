@@ -73,7 +73,7 @@ const NavContainer = styled.div`
     > span:nth-child(1) {
       /* transition: all 1s ease; */
     }
-    
+
     > span:nth-child(1) .navbar-collection {
       position: fixed;
       background: var(--black-gradient);
@@ -164,7 +164,6 @@ const Navbar = () => {
   return (
     <>
       <NavContainer>
-
         <div className="boat-logo">
           <Link to="/">
             <img src={logo} alt="Logo" />

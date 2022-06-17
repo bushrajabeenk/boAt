@@ -2,12 +2,12 @@ import {
   GET_DATA_LOADING,
   GET_DATA_SUCCESS,
   GET_DATA_ERROR,
-  POST_DATA_LOADING,
-  POST_DATA_SUCCESS,
-  POST_DATA_ERROR,
-  PATCH_DATA_LOADING,
-  PATCH_DATA_SUCCESS,
-  PATCH_DATA_ERROR,
+  // POST_DATA_LOADING,
+  // POST_DATA_SUCCESS,
+  // POST_DATA_ERROR,
+  // PATCH_DATA_LOADING,
+  // PATCH_DATA_SUCCESS,
+  // PATCH_DATA_ERROR,
   DELETE_DATA_LOADING,
   DELETE_DATA_SUCCESS,
   DELETE_DATA_ERROR,
@@ -16,22 +16,22 @@ import {
 } from "./cart.types";
 
 const initState = {
-  getData: {
+  getCData: {
     loading: false,
     success: false,
     error: false,
   },
-  postData: {
-    loading: false,
-    success: false,
-    error: false,
-  },
-  patchData: {
-    loading: false,
-    success: false,
-    error: false,
-  },
-  deleteData: {
+  // postCData: {
+  //   loading: false,
+  //   success: false,
+  //   error: false,
+  // },
+  // patchCData: {
+  //   loading: false,
+  //   success: false,
+  //   error: false,
+  // },
+  deleteCData: {
     loading: false,
     success: false,
     error: false,
@@ -45,8 +45,8 @@ export const cartReducer = (state = initState, { type, payload }) => {
     case GET_DATA_LOADING: {
       return {
         ...state,
-        getData: {
-          ...state.getData,
+        getCData: {
+          ...state.getCData,
           loading: true,
           success: false,
           error: false,
@@ -56,8 +56,8 @@ export const cartReducer = (state = initState, { type, payload }) => {
     case GET_DATA_SUCCESS: {
       return {
         ...state,
-        getData: {
-          ...state.getData,
+        getCData: {
+          ...state.getCData,
           loading: false,
           success: true,
           error: false,
@@ -68,89 +68,89 @@ export const cartReducer = (state = initState, { type, payload }) => {
     case GET_DATA_ERROR: {
       return {
         ...state,
-        getData: {
-          ...state.getData,
+        getCData: {
+          ...state.getCData,
           loading: false,
           success: false,
           error: true,
         },
       };
     }
-    case POST_DATA_LOADING: {
-      return {
-        ...state,
-        postData: {
-          ...state.postData,
-          loading: true,
-          success: false,
-          error: false,
-        },
-      };
-    }
-    case POST_DATA_SUCCESS: {
-      return {
-        ...state,
-        postData: {
-          ...state.postData,
-          loading: false,
-          success: true,
-          error: false,
-        },
-        cartData: [...state.cartData, payload],
-      };
-    }
-    case POST_DATA_ERROR: {
-      return {
-        ...state,
-        postData: {
-          ...state.postData,
-          loading: false,
-          success: false,
-          error: true,
-        },
-      };
-    }
-    case PATCH_DATA_LOADING: {
-      return {
-        ...state,
-        patchData: {
-          ...state.patchData,
-          loading: true,
-          success: false,
-          error: false,
-        },
-        cartData: payload,
-      };
-    }
-    case PATCH_DATA_SUCCESS: {
-      return {
-        ...state,
-        patchData: {
-          ...state.patchData,
-          loading: false,
-          success: true,
-          error: false,
-        },
-        data: payload,
-      };
-    }
-    case PATCH_DATA_ERROR: {
-      return {
-        ...state,
-        patchData: {
-          ...state.patchData,
-          loading: false,
-          success: false,
-          error: true,
-        },
-        cartData: payload,
-      };
-    }
+    // case POST_DATA_LOADING: {
+    //   return {
+    //     ...state,
+    //     postCData: {
+    //       ...state.postCData,
+    //       loading: true,
+    //       success: false,
+    //       error: false,
+    //     },
+    //   };
+    // }
+    // case POST_DATA_SUCCESS: {
+    //   return {
+    //     ...state,
+    //     postCData: {
+    //       ...state.postCData,
+    //       loading: false,
+    //       success: true,
+    //       error: false,
+    //     },
+    //     cartData: [...state.cartData, payload],
+    //   };
+    // }
+    // case POST_DATA_ERROR: {
+    //   return {
+    //     ...state,
+    //     postCData: {
+    //       ...state.postCData,
+    //       loading: false,
+    //       success: false,
+    //       error: true,
+    //     },
+    //   };
+    // }
+    // case PATCH_DATA_LOADING: {
+    //   return {
+    //     ...state,
+    //     patchCData: {
+    //       ...state.patchCData,
+    //       loading: true,
+    //       success: false,
+    //       error: false,
+    //     },
+    //     cartData: payload,
+    //   };
+    // }
+    // case PATCH_DATA_SUCCESS: {
+    //   return {
+    //     ...state,
+    //     patchCData: {
+    //       ...state.patchCData,
+    //       loading: false,
+    //       success: true,
+    //       error: false,
+    //     },
+    //     data: payload,
+    //   };
+    // }
+    // case PATCH_DATA_ERROR: {
+    //   return {
+    //     ...state,
+    //     patchCData: {
+    //       ...state.patchCData,
+    //       loading: false,
+    //       success: false,
+    //       error: true,
+    //     },
+    //     cartData: payload,
+    //   };
+    // }
     case DELETE_DATA_LOADING: {
       return {
         ...state,
-        deleteData: {
-          ...state.deleteData,
+        deleteCData: {
+          ...state.deleteCData,
           loading: true,
           success: false,
           error: false,
@@ -161,8 +161,8 @@ export const cartReducer = (state = initState, { type, payload }) => {
     case DELETE_DATA_SUCCESS: {
       return {
         ...state,
-        deleteData: {
-          ...state.deleteData,
+        deleteCData: {
+          ...state.deleteCData,
           loading: false,
           success: true,
           error: false,
@@ -173,8 +173,8 @@ export const cartReducer = (state = initState, { type, payload }) => {
     case DELETE_DATA_ERROR: {
       return {
         ...state,
-        deleteData: {
-          ...state.deleteData,
+        deleteCData: {
+          ...state.deleteCData,
           loading: false,
           success: false,
           error: true,
