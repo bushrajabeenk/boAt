@@ -25,7 +25,6 @@ const Cart = () => {
   const cartData = useSelector((state) => state.cart.cartData);
   const count = useSelector((state) => state.cart.count);
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
 
   const checkout = () => {

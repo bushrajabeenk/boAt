@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { postCDataFunc } from "../../Store/cart/cart.actions";
+import { getCDataFunc } from "./../../Store/cart/cart.actions";
 
 const OuterCardContainer = styled.div`
   width: 100%;
@@ -128,8 +131,16 @@ const CardShopNowButton = styled.button`
   }
 `;
 
-export const ProductCard = ({ el, handleAddToCart }) => {
+export const ProductCard = ({ el }) => {
   const imageFlag = el.image.length > 1 ? true : false;
+
+  // const cartData = useSelector((state) => state.cart.cartData);
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (id) => {
+    dispatch(postCDataFunc(id));
+    dispatch(getCDataFunc());
+  };
 
   return (
     <OuterCardContainer>
