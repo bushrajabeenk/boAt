@@ -1,9 +1,22 @@
-import React from 'react'
+import { LOGIN_ERROR, LOGIN_SUCCESS, REGISTER } from "./register.types";
 
-const registerReducer = () => {
-  return (
-    <div>register.reducer</div>
-  )
-}
+const initState = {
+  users: [],
+  regUser: null,
+};
 
-export default registerReducer
+const registerReducer = (state = initState, action) => {
+  switch (action.type) {
+    case REGISTER: {
+      return {
+        ...state,
+        users: [...state.users, action.payload],
+      };
+    }
+    default: {
+      return state;
+    }
+  }
+};
+
+export default registerReducer;

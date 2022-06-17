@@ -1,3 +1,19 @@
-export const ADD_ITEM = "addItem";
-export const DEL_ITEM = "delItem";
-export const EDIT_ITEM = "editItem";
+export const GET_DATA_LOADING = "GET_DATA_LOADING";
+export const GET_DATA_SUCCESS = "PGET_DATA_SUCCESS";
+export const GET_DATA_ERROR = "GET_DATA_ERROR";
+
+export const POST_DATA_LOADING = "POST_DATA_LOADING";
+export const POST_DATA_SUCCESS = "POST_DATA_SUCCESS";
+export const POST_DATA_ERROR = "POST_DATA_ERROR";
+
+export const PATCH_DATA_LOADING = "PATCH_DATA_LOADING";
+export const PATCH_DATA_SUCCESS = "PATCH_DATA_SUCCESS";
+export const PATCH_DATA_ERROR = "PATCH_DATA_ERROR";
+
+export const DELETE_DATA_LOADING = "DELETE_DATA_LOADING";
+export const DELETE_DATA_SUCCESS = "DELETE_DATA_SUCCESS";
+export const DELETE_DATA_ERROR = "DELETE_DATA_ERROR";
+
+export const INC_DATA = "INC_DATA";
+
+export const DEC_DATA = "DEC_DATA";
