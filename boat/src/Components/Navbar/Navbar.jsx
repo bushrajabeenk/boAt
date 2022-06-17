@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 // import { useLocation } from "react-router-dom";
 
 // importing Custom sub-Components
-import { SearchResults } from "./NavHover";
+import { Collection, SearchResults } from "./NavHover";
 // import { Collection } from "./NavHover";
 
 
@@ -28,6 +28,27 @@ const NavContainer = styled.div`
   align-items: center;
   justify-content: space-around;
   z-index: 10;
+
+  .bottomAnimation {
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1.1rem;
+ }
+ 
+ .bottomAnimation::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: rgb(255, 255, 255);
+    transition: width .3s;
+ }
+ 
+ .bottomAnimation:hover::after {
+    width: 100%;
+    transition: width .3s;
+ }
 
   span,
   img {
@@ -63,10 +84,6 @@ const NavContainer = styled.div`
       font-size: 15px;
       position: relative;
       transition: all 0.2s ease;
-    }
-
-    > span:hover {
-      text-decoration: underline;
     }
 
     > span:nth-child(4)::after {
@@ -152,17 +169,7 @@ const NavbarSpaceHolder = styled.div`
 `;
 
 const Navbar = () => {
-  // const [flag, setFlag] = useState(false);
-  // const temp = useLocation();
-  // console.log(temp);
-
-  // useEffect(() => {
-  //   if (temp.location.pathname === "/pages/sound-of-champions") {
-  //     setFlag(true);
-  //   } else {
-  //     setFlag(false);
-  //   }
-  // }, [temp.location.pathname]);
+  
 
   const cartData = useSelector((state) => state.cart.cartData);
 
@@ -176,14 +183,14 @@ const Navbar = () => {
         </div>
 
         <div className="nav-links">
-          <span>
+          <span className="bottomAnimation">
             Shop <img src={downArrowIcon} alt="arrow-Icon" />
-            {/* <Collection className="navbar-collection" /> */}
+            <Collection className="navbar-collection" />
           </span>
 
-          <span>Offer Zone</span>
+          <span className="bottomAnimation" >Offer Zone</span>
 
-          <span>
+          <span className="bottomAnimation">
             More <img src={downArrowIcon} alt="arrow-Icon" />
           </span>
         </div>
