@@ -5,7 +5,7 @@ const initState = {
   regUser: null,
 };
 
-const registerReducer = (state = initState, action) => {
+export const registerReducer = (state = initState, action) => {
   switch (action.type) {
     case REGISTER: {
       return {
@@ -19,4 +19,3 @@ const registerReducer = (state = initState, action) => {
   }
 };
 
-export default registerReducer;

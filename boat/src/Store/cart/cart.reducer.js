@@ -13,7 +13,7 @@ import {
   DELETE_DATA_ERROR,
   INC_DATA,
   DEC_DATA,
-} from "./cart/types";
+} from "./cart.types";
 
 const initState = {
   getData: {

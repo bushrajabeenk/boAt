@@ -5,8 +5,8 @@ import {
   combineReducers,
 } from "redux";
 import thunk from "redux-thunk";
-import cartReducer from "./cart/cart.reducer";
-import registerReducer from "./register/register.reducer";
+import { cartReducer } from "./cart/cart.reducer";
+import { registerReducer } from "./register/register.reducer";
 import { loginReducer } from "./login/login.reducer";
 
 const rootreducer = combineReducers({
@@ -15,9 +15,9 @@ const rootreducer = combineReducers({
   login: loginReducer,
 });
 
-const createComposer = window._REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export const store = createStore(
   rootreducer,
-  createComposer(applyMiddleware(thunk))
+  composeEnhancers(applyMiddleware(thunk))
 );
