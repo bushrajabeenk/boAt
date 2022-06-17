@@ -5,7 +5,6 @@ import Login from "./../Components/Login-Signup/Login";
 import Signup from "./../Components/Login-Signup/Signup";
 import Payments from "./../Components/Payments/Payments";
 import Products from "./../Components/Products/Products";
-import Collections from "./../Components/Collections/Collections";
 import Error from "./../Components/Error/Error";
 import Success from "./../Components/Success/Success";
 import Cart from './../Components/Cart/Cart';
@@ -27,11 +26,6 @@ const AllRoutes = () => {
         <Route path="/payment" element={<Payments />}></Route>
 
         <Route exact path="/successful" element={<Success />}></Route>
-
-        <Route
-          path="/collections/:collectionName"
-          element={<Collections />}
-        ></Route>
 
         <Route path="*" element={<Error />}></Route>
       </Routes>
