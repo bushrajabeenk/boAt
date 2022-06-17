@@ -12,7 +12,6 @@ import {
 } from "./cart.types";
 import axios from "axios";
 
-
 export const getCDataFunc = () => async (dispatch) => {
   dispatch({ type: GET_DATA_LOADING });
   return axios
@@ -25,10 +24,10 @@ export const getCDataFunc = () => async (dispatch) => {
     });
 };
 
-export const postCDataFunc = () => async (dispatch) => {
+export const postCDataFunc = (payload) => async (dispatch) => {
   dispatch({ type: POST_DATA_LOADING });
   return axios
-    .post("https://my-boat-data.herokuapp.com/cartData")
+    .post("https://my-boat-data.herokuapp.com/cartData", payload)
     .then((r) => {
       dispatch({ type: POST_DATA_SUCCESS, payload: r.data });
       dispatch({ type: GET_DATA_SUCCESS, payload: r.data });
