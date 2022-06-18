@@ -54,7 +54,7 @@ const Cart = () => {
           value upto ₹3000
         </p>
 
-        {cartData.map((cartD) => {
+        {cartData?.map((cartD) => {
           return (
             <div key={cartD.id}>
               <div className="top">
@@ -112,14 +112,14 @@ const Cart = () => {
                     </b>
                   </div>
                 </div>
-                <div>Or 3 interest-free payment of 1499 with Zest</div>
-                <div onClick={contShopping}>Continue Shopping</div>
-                <div onClick={checkout}>CASH ON DELIVERY</div>
-                <div onClick={checkout}>PAY VIA CARD/OTHERS</div>
               </div>
             </div>
           );
         })}
+        <div>Or 3 interest-free payment of 1499 with Zest</div>
+        <div onClick={contShopping}>Continue Shopping</div>
+        <div onClick={checkout}>CASH ON DELIVERY</div>
+        <div onClick={checkout}>PAY VIA CARD/OTHERS</div>
       </CartContainer>
     </div>
   );

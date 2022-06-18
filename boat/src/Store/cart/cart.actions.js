@@ -5,6 +5,7 @@ import {
   POST_DATA_LOADING,
   POST_DATA_SUCCESS,
   POST_DATA_ERROR,
+  DELETE_DATA_LOADING,
   DELETE_DATA_SUCCESS,
   DELETE_DATA_ERROR,
   INC_DATA,
@@ -25,7 +26,7 @@ export const getCDataFunc = () => async (dispatch) => {
 };
 
 export const postCDataFunc = (payload) => async (dispatch) => {
-  // dispatch({ type: POST_DATA_LOADING });
+  dispatch({ type: POST_DATA_LOADING });
   return axios
     .post("https://my-boat-data.herokuapp.com/cartData", payload)
     .then((r) => {
@@ -38,7 +39,7 @@ export const postCDataFunc = (payload) => async (dispatch) => {
 };
 
 export const deleteCDataFunc = (clickedId) => async (dispatch) => {
-  // dispatch({ type: DELETE_DATA_LOADING });
+  dispatch({ type: DELETE_DATA_LOADING });
   return axios
     .delete(`https://my-boat-data.herokuapp.com/cartData/${clickedId}`)
     .then((r) => {

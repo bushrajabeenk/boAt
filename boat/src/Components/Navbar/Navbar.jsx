@@ -16,6 +16,7 @@ import cartIcon from "./../../Assets/cart-icon.svg";
 import { useSelector } from "react-redux";
 // import { useEffect, useState } from "react";
 
+
 const NavContainer = styled.div`
   position: fixed;
   top: 0;
@@ -27,7 +28,7 @@ const NavContainer = styled.div`
   align-items: center;
   justify-content: space-around;
   z-index: 10;
-
+  
   .bottomAnimation {
     display: inline-block;
     color: rgb(255, 255, 255);
@@ -221,17 +222,6 @@ const Navbar = () => {
               </div>
             </Link>
           </div>
-
-          {/* <div>
-            <Link to="/cart">
-              <button type="button" class="icon-button">
-                <span class="material-icons">
-                  <img src={cartIcon} alt="cartIcon" />
-                </span>
-                <span>{cartData.length}</span>
-              </button>
-            </Link>
-          </div> */}
           
         </div>
       </NavContainer>
