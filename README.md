@@ -7,10 +7,6 @@ boAt is an India-based consumer electronics brand established in 2015 that marke
 
 ## Signup page
 
-## Products page
-
-## Product Details page
-
 ## Cart page
 
 ## Payment page
@@ -31,12 +27,9 @@ boAt is an India-based consumer electronics brand established in 2015 that marke
 - JavaScript (ES6)
 - ReactJS
 - Redux
-- JSON API
+- json-server-on-heroku
 
 
 # Blog
-
-# Presentation Video
-
 
 # Solo Project
