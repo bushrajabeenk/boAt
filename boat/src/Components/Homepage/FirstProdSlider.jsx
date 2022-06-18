@@ -6,10 +6,12 @@ import axios from "axios";
 const Container = styled.div`
   width: 100%;
   height: 570px;
-  padding-top: 40px;
+  padding-top: 60px;
+  margin-bottom: 40px;
 
   .heading {
     color: white;
+    margin-bottom: 50px;
   }
 
   .data-grid {

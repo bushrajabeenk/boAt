@@ -10,6 +10,7 @@ import {
   DELETE_DATA_ERROR,
   INC_DATA,
   DEC_DATA,
+  CLEAR_DATA,
 } from "./cart.types";
 
 const initState = {
@@ -138,11 +139,18 @@ export const cartReducer = (state = initState, { type, payload }) => {
         cartData: payload,
       };
     }
+  
     case INC_DATA: {
       return { ...state, count: state.count + payload };
     }
     case DEC_DATA: {
       return { ...state, count: state.count - payload };
+    }
+    case CLEAR_DATA: {
+      return {
+        ...state,
+        cartData: [],
+      };
     }
     default: {
       return state;

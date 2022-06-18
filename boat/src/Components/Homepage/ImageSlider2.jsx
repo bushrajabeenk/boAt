@@ -8,7 +8,7 @@ import img23 from "./../../Assets/slider-img23.webp";
 const Container = styled.div`
   width: 100%;
   height: 570px;
-  margin-bottom: 110px;
+  margin-bottom: 330px;
 
   .heading {
     color: white;
@@ -29,8 +29,8 @@ export const ImageSlider2 = () => {
         <h1>New Launches</h1>
       </div>
       <SimpleImageSlider
-        width={"83%"}
-        height={"70vh"}
+        width={"60%"}
+        height={"100vh"}
         images={images}
         showBullets={false}
         showNavs={true}

@@ -10,6 +10,7 @@ import {
   DELETE_DATA_ERROR,
   INC_DATA,
   DEC_DATA,
+  CLEAR_DATA,
 } from "./cart.types";
 import axios from "axios";
 
@@ -53,4 +54,30 @@ export const deleteCDataFunc = (clickedId) => async (dispatch) => {
 
 export const inc_count = () => ({ type: INC_DATA, payload: 1 });
 
+// export const inc_count = (id) => async (dispatch) => {
+//   return axios
+//     .post(`https://my-boat-data.herokuapp.com/cartData/${id}`)
+//     .then((r) => {
+//       dispatch({ type: INC_DATA, payload: id });
+//       dispatch({ type: GET_DATA_SUCCESS, payload: r.data });
+//     })
+//     .catch((err) => {
+//       dispatch({ type: DELETE_DATA_ERROR, payload: err });
+//     });
+// };
+
 export const dec_count = () => ({ type: DEC_DATA, payload: 1 });
+
+// export const dec_count = (id) => async (dispatch) => {
+//   return axios
+//     .delete(`https://my-boat-data.herokuapp.com/cartData/${id}`)
+//     .then((r) => {
+//       dispatch({ type: DEC_DATA, payload: id });
+//       dispatch({ type: GET_DATA_SUCCESS, payload: r.data });
+//     })
+//     .catch((err) => {
+//       dispatch({ type: DELETE_DATA_ERROR, payload: err });
+//     });
+// };
+
+export const clear_data = () => ({ type: CLEAR_DATA });

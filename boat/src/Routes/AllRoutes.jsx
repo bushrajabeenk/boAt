@@ -1,13 +1,14 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Homepage from "./../Components/Homepage/Homepage";
-import Login from "./../Components/Login-Signup/Login";
-import Signup from "./../Components/Login-Signup/Signup";
-import Payments from "./../Components/Payments/Payments";
-import Products from "./../Components/Products/Products";
 import Error from "./../Components/Error/Error";
 import Success from "./../Components/Success/Success";
-import Cart from './../Components/Cart/Cart';
+import Cart from "./../Components/Cart/Cart";
+import { Login } from "./../Components/Login/Login";
+import { Signup } from "../Components/Signup/Signup";
+import Checkout from "./../Components/Payments/Checkout";
+import Payments from "./../Components/Payments/Payments";
+import GetOTP from "./../Components/Payments/GetOTP";
 
 const AllRoutes = () => {
   return (
@@ -19,13 +20,15 @@ const AllRoutes = () => {
 
         <Route path="/account/signup" element={<Signup />}></Route>
 
-        <Route path="/products/:productName" element={<Products />}></Route>
-
         <Route path="/cart" element={<Cart />}></Route>
 
-        <Route path="/payment" element={<Payments />}></Route>
+        <Route path="/checkout" element={<Checkout />}></Route>
 
-        <Route exact path="/successful" element={<Success />}></Route>
+        <Route path="/payments" element={<Payments />}></Route>
+
+        <Route path="/getotp" element={<GetOTP />}></Route>
+
+        <Route exact path="/success" element={<Success />}></Route>
 
         <Route path="*" element={<Error />}></Route>
       </Routes>

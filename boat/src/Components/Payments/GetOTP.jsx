@@ -1,11 +1,14 @@
 import React from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+import { clear_data } from "../../Store/cart/cart.actions";
 
-const CardContainer = styled.div`
+const GetOTPContainer = styled.div`
   .checkoutDiv {
     border: 1px solid rgb(199, 199, 199);
-    width: 500px;
+    width: 300px;
     margin: auto;
     margin-bottom: 50px;
     background-color: white;
@@ -65,46 +68,49 @@ const CardContainer = styled.div`
     cursor: pointer;
   }
 
-  .backgroundColorPayment {
+  .backgroundColorOtp {
     background-color: rgb(20, 20, 20);
     width: 100%;
-    height: 650px;
+    height: 350px;
     padding-top: 50px;
   }
 `;
 
-const Payments = () => {
+const GetOTP = () => {
   const navigate = useNavigate();
-  const sendOTP = () => {
-    alert("OTP has been sent to your registered Mobile No.");
-    navigate("/getotp");
+  const dispatch = useDispatch();
+
+  const handleOtp = (e) => {
+    // let otp = e.target.value;
+    // if (otp.length === 5) {
+    // navigate("/success");
+    navigate("/");
+    dispatch(clear_data());
+    // } else {
+    //   alert("Enter 5-digit OTP");
+    // }
   };
+
+  useEffect(() => {
+    alert("Please Enter the OTP");
+  }, []);
+
   return (
-    <CardContainer>
-      <div className="backgroundColorPayment">
+    <GetOTPContainer>
+      <div className="backgroundColorOtp">
         <div className="checkoutDiv">
           <div className="checkoutHeadDiv">
-            <h2 className="checkoutHead">Payment Details</h2>
+            <h2 className="checkoutHead">Enter OTP</h2>
           </div>
-          <label>Card Holder's Name</label>
-          <input type="text" name="" id="" />
-          <br/>
-          <label>Card Number</label>
-          <input type="number" name="" id="" />
-          <br/>
-          <label>CVV</label>
-          <input type="number" name="" id="" />
-          <br/>
-          <label>Expiry Date</label>
-          <input type="date" name="" id="" />
-          <br/>
-          <button className="checkoutBtn" onClick={sendOTP}>
+          <input type="number" />
+          <br />
+          <button onClick={handleOtp} className="checkoutBtn">
             Submit
           </button>
         </div>
       </div>
-    </CardContainer>
+    </GetOTPContainer>
   );
 };
 
-export default Payments;
+export default GetOTP;

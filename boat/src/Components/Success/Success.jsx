@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import { Link } from 'react-router-dom';
 
 const Success = () => {
   return (
-    <div>Success</div>
-  )
-}
+    <div>
+      <h1>Thank you for shopping!</h1>
+      <Link to={"/"}>
+        <button>Continue Shopping</button>
+      </Link>
+    </div>
+  );
+};
 
-export default Success
+export default Success;

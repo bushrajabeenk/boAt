@@ -1,8 +1,15 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const CardContainer = styled.div`
+const CheckoutContainer = styled.div`
+  .backgroundColor {
+    background-color: rgb(20, 20, 20);
+    width: 100%;
+    height: 850px;
+    padding-top: 50px;
+  }
+
   .checkoutDiv {
     border: 1px solid rgb(199, 199, 199);
     width: 500px;
@@ -64,47 +71,41 @@ const CardContainer = styled.div`
     font-size: 0.9rem;
     cursor: pointer;
   }
-
-  .backgroundColorPayment {
-    background-color: rgb(20, 20, 20);
-    width: 100%;
-    height: 650px;
-    padding-top: 50px;
-  }
 `;
 
-const Payments = () => {
-  const navigate = useNavigate();
-  const sendOTP = () => {
-    alert("OTP has been sent to your registered Mobile No.");
-    navigate("/getotp");
-  };
+const Checkout = () => {
   return (
-    <CardContainer>
-      <div className="backgroundColorPayment">
+    <CheckoutContainer>
+      <div className="backgroundColor">
         <div className="checkoutDiv">
           <div className="checkoutHeadDiv">
-            <h2 className="checkoutHead">Payment Details</h2>
+            <h2 className="checkoutHead">Delivery Address</h2>
           </div>
-          <label>Card Holder's Name</label>
-          <input type="text" name="" id="" />
-          <br/>
-          <label>Card Number</label>
-          <input type="number" name="" id="" />
-          <br/>
-          <label>CVV</label>
-          <input type="number" name="" id="" />
-          <br/>
-          <label>Expiry Date</label>
-          <input type="date" name="" id="" />
-          <br/>
-          <button className="checkoutBtn" onClick={sendOTP}>
-            Submit
-          </button>
+          <label>First Name</label>
+          <input type="text" />
+          <br />
+          <label>Last Name</label>
+          <input type="text" />
+          <br />
+          <label>Address</label>
+          <input type="text" />
+          <br />
+          <label>City</label>
+          <input type="text" />
+          <br />
+          <label>State</label>
+          <input type="text" />
+          <br />
+          <label>Pincode</label>
+          <input type="text" />
+          <br />
+          <Link to={"/payments"}>
+            <button className="checkoutBtn">Submit</button>
+          </Link>
         </div>
       </div>
-    </CardContainer>
+    </CheckoutContainer>
   );
 };
 
-export default Payments;
+export default Checkout;

@@ -14,6 +14,8 @@ export const DELETE_DATA_LOADING = "DELETE_DATA_LOADING";
 export const DELETE_DATA_SUCCESS = "DELETE_DATA_SUCCESS";
 export const DELETE_DATA_ERROR = "DELETE_DATA_ERROR";
 
+export const CLEAR_DATA = "CLEAR_DATA";
+
 export const INC_DATA = "INC_DATA";
 
 export const DEC_DATA = "DEC_DATA";

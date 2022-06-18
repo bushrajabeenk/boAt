@@ -9,6 +9,7 @@ const Container = styled.div`
 
   .heading {
     color: white;
+    margin-bottom: 60px;
   }
 
   .data-grid {
